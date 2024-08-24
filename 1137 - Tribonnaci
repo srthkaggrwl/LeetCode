@@ -1,0 +1,15 @@
+class Solution(object):
+    def __init__(self):
+        self.mydict = {}
+
+    def tribonacci(self, n):
+              
+        if n in [0,1]:
+            return n
+        elif n == 2:
+            return 1
+
+        else:
+            if n not in self.mydict:
+                self.mydict[n] = self.tribonacci(n-1) + self.tribonacci(n-2) + self.tribonacci(n-3)
+            return self.mydict[n]           
